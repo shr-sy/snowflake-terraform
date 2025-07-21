@@ -3,13 +3,25 @@
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
+*.tfplan
 
-# IDE/editor
+# Environment/Secrets
+.env
+.env.*
+
+# IDE/editor folders and temp files
 .vscode/
 .idea/
 *.swp
+*.swo
 *.bak
+*.backup
 
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Other temp/backup files
+*~
+*.tmp
+*.old
