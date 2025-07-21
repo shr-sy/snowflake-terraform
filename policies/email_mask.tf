@@ -1,19 +1,8 @@
-
 resource "snowflake_masking_policy" "email_mask" {
-  name     = "EMAIL_MASK"
-  database = "YOUR_DB"
-  schema   = "YOUR_SCHEMA"
-
-  signature {
-    column_names = ["email"]
-    column_types = ["VARCHAR"]
-  }
-
-  return_data_type = "VARCHAR"
-  body = <<-SQL
-    CASE
-      WHEN CURRENT_ROLE() IN ('ACCOUNTADMIN', 'FULL_ACCESS') THEN email
-      ELSE '***MASKED***'
-    END
-  SQL
+  name              = "EMAIL_MASK"
+  database          = "YOUR_DB"
+  schema            = "YOUR_SCHEMA"
+  input_data_type   = "VARCHAR"
+  return_data_type  = "VARCHAR"
+  expression        = "CASE WHEN CURRENT_ROLE() IN ('SYSADMIN') THEN val ELSE '***@***.com' END"
 }
