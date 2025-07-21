@@ -1,23 +1,45 @@
+
 terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "~> 0.69"
+      version = ">= 0.56.0"
     }
   }
 
   backend "remote" {
     organization = "your-hcp-org-name"
+
     workspaces {
-      name = "snowflake-core"
+      name = "snowflake-terraform-ws"
     }
   }
 }
 
 provider "snowflake" {
-  # Uses these environment variables automatically:
-  # SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, SNOWFLAKE_PASSWORD, etc.
+  account  = env("SNOWFLAKE_ACCOUNT_NAME")
+  username = env("SNOWFLAKE_USER")
+  password = env("SNOWFLAKE_PASSWORD")
+  role     = env("SNOWFLAKE_ROLE")
+  region   = env("SNOWFLAKE_REGION")
 }
 
-# Load all user/role/policy .tf files (Terraform auto-loads from subfolders)
-# No need for modules or explicit includes
+# Load user modules
+module "users" {
+  source = "./users"
+}
+
+# Load role modules
+module "roles" {
+  source = "./roles"
+}
+
+# Load policy modules
+module "policies" {
+  source = "./policies"
+}
+
+# Optionally read warehouse details from Snowflake using a data source
+module "warehouse_import" {
+  source = "./warehouse"
+}
