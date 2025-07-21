@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    snowflake = {
-      source  = "snowflake-labs/snowflake"
-      version = ">= 1.0.0"
-    }
-  }
-}
 
 resource "snowflake_masking_policy" "email_mask" {
   name     = "EMAIL_MASK"
