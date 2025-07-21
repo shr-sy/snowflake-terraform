@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     snowflake = {
@@ -7,39 +6,34 @@ terraform {
     }
   }
 
-  backend "remote" {
-    organization = "your-hcp-org-name"
+  cloud {
+    organization = "your_hcp_organization_name"
 
     workspaces {
-      name = "snowflake-terraform-ws"
+      name = "your_workspace_name"
     }
   }
 }
 
 provider "snowflake" {
-  account  = env("SNOWFLAKE_ACCOUNT_NAME")
-  username = env("SNOWFLAKE_USER")
-  password = env("SNOWFLAKE_PASSWORD")
-  role     = env("SNOWFLAKE_ROLE")
-  region   = env("SNOWFLAKE_REGION")
+  account_name = env.SNOWFLAKE_ACCOUNT_NAME
+  login_name   = env.SNOWFLAKE_USER
+  password     = env.SNOWFLAKE_PASSWORD
+  role         = env.SNOWFLAKE_ROLE
 }
 
-# Load user modules
 module "users" {
   source = "./users"
 }
 
-# Load role modules
 module "roles" {
   source = "./roles"
 }
 
-# Load policy modules
 module "policies" {
   source = "./policies"
 }
 
-# Optionally read warehouse details from Snowflake using a data source
 module "warehouse_import" {
   source = "./warehouse"
 }
