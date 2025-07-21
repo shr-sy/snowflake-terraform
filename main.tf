@@ -7,10 +7,10 @@ terraform {
   }
 
   cloud {
-    organization = "your_hcp_organization_name"
+    organization = "Exercises"
 
     workspaces {
-      name = "your_workspace_name"
+      name = "snowflake-terraform"
     }
   }
 }
