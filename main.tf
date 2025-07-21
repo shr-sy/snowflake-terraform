@@ -17,6 +17,7 @@ terraform {
 
 provider "snowflake" {
   account_name = env.SNOWFLAKE_ACCOUNT_NAME
+  organization_name = env.SNOWFLAKE_ORGANIZATION_NAME
   login_name   = env.SNOWFLAKE_USER
   password     = env.SNOWFLAKE_PASSWORD
   role         = env.SNOWFLAKE_ROLE
