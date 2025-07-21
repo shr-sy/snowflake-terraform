@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    snowflake = {
+      source  = "snowflake-labs/snowflake"
+      version = ">= 1.0.0"
+    }
+  }
+}
 
 resource "snowflake_masking_policy" "phone_mask" {
   name     = "PHONE_MASK"
