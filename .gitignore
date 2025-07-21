@@ -1,11 +1,15 @@
-# Terraform junk
-*.tfstate
-*.tfstate.backup
+# Terraform files
 .terraform/
+*.tfstate
+*.tfstate.*
 .terraform.lock.hcl
 
-# Editor junk
+# IDE/editor
 .vscode/
 .idea/
 *.swp
-*.DS_Store
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
