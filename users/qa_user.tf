@@ -1,6 +1,6 @@
 resource "snowflake_user" "qa_user" {
-  name         = "QA_USER"
-  password     = "QaPass123!"
-  default_role = "QA_ROLE"
-  disabled     = false
+  name     = "QA_USER"
+  password = "QaUser@123"
+  comment  = "QA user"
+  disabled = false
 }
