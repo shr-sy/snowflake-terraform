@@ -9,7 +9,7 @@ terraform {
 
 provider "snowflake" {
   account  = var.SNOWFLAKE_ACCOUNT_NAME
-  organization = var.SNOWFLAKE_ORGANIZATION_NAME
+  #organization = var.SNOWFLAKE_ORGANIZATION_NAME
   username = var.SNOWFLAKE_USER
   password = var.SNOWFLAKE_PASSWORD
   role     = var.SNOWFLAKE_ROLE
