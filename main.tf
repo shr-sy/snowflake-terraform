@@ -11,4 +11,7 @@ provider "snowflake" {}
 
 module "warehouse" {
   source = "./warehouse"
+  providers = {
+    snowflake = snowflake
+  }
 }
