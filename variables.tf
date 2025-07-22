@@ -1,5 +1,5 @@
 # Snowflake Connection Variables
-variable "SNOWFLAKE_ACCOUNT" {
+variable "SNOWFLAKE_ACCOUNT_NAME" {
   description = "Snowflake account name"
   type        = string
 }
