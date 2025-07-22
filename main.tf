@@ -9,7 +9,7 @@ terraform {
 
 provider "snowflake" {}
 
-module "warehouse" {
+module "new_warehouses" {
   source = "./warehouse"
   providers = {
     snowflake = snowflake
