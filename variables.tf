@@ -4,10 +4,10 @@ variable "SNOWFLAKE_ACCOUNT_NAME" {
   type        = string
 }
 
-variable "SNOWFLAKE_ORGANIZATION_NAME" {
-  description = "Snowflake organization name"
-  type        = string
-}
+#variable "SNOWFLAKE_ORGANIZATION_NAME" {
+#  description = "Snowflake organization name"
+#  type        = string
+#}
 
 variable "SNOWFLAKE_ROLE" {
   description = "Snowflake role for Terraform operations"
