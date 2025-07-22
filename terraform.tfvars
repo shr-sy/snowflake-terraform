@@ -1,3 +1,3 @@
 new_warehouses = {
-  TEST_WH  = "Testing warehouse"
+  SHRUTI_WH  = "Testing warehouse"
 }
