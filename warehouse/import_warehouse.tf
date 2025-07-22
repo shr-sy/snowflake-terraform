@@ -1,7 +1,3 @@
-data "snowflake_warehouse" "existing_warehouse" {
-  name = "COMPUTE_WH"
-}
-
 # Create NEW warehouses
 resource "snowflake_warehouse" "new" {
   for_each = var.new_warehouses
