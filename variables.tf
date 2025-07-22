@@ -25,13 +25,4 @@ variable "SNOWFLAKE_PASSWORD" {
   sensitive   = true
 }
 
-# Warehouse Variables
-variable "existing_warehouses" {
-  description = "Map of existing warehouses to be imported into Terraform state"
-  type        = map(string)
-}
 
-variable "new_warehouses" {
-  description = "Map of new warehouses to be created by Terraform"
-  type        = map(string)
-}
