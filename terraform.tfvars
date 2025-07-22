@@ -5,5 +5,5 @@ SNOWFLAKE_USER = "SHR1234"
 SNOWFLAKE_PASSWORD = "ASDWqwer1234@!"
 
 new_warehouses = {
-  SHRUTI_WH  = "Testing warehouse"
+  QWER_WH  = "Testing warehouse"
 }
