@@ -7,8 +7,6 @@ terraform {
   }
 }
 
-provider "snowflake" {}
-
 module "warehouse" {
   source = "./warehouse"
   providers = {
