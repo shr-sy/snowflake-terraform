@@ -7,12 +7,18 @@ terraform {
   }
 }
 
-provider "snowflake" {}
+provider "snowflake" {
+  alias    = "default"
+  account  = var.SNOWFLAKE_ACCOUNT
+  username = var.SNOWFLAKE_USERNAME
+  password = var.SNOWFLAKE_PASSWORD
+  role     = var.SNOWFLAKE_ROLE
+}
 
 module "warehouse" {
-  source          = "./warehouse"
-  new_warehouses  = var.new_warehouses
-  warehouse_owners = var.warehouse_owners  # Add this line
+  source           = "./warehouse"
+  new_warehouses   = var.new_warehouses
+  warehouse_owners = var.warehouse_owners
 }
 
 module "users" {
@@ -22,9 +28,7 @@ module "users" {
 }
 
 module "role" {
-  source     = "./role"
-  role_list  = var.role_list
-  role_owners  = var.role_owners   # 👈 Add this line
+  source      = "./role"
+  role_list   = var.role_list
+  role_owners = var.role_owners
 }
-
-
