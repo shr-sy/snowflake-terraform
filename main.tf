@@ -21,8 +21,8 @@ module "users" {
   user_passwords = var.user_passwords
 }
 
-module "roles" {
-  source     = "./roles"
+module "role" {
+  source     = "./role"
   role_list  = var.role_list
   role_owners  = var.role_owners   # 👈 Add this line
 }
