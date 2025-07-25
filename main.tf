@@ -7,13 +7,7 @@ terraform {
   }
 }
 
-provider "snowflake" {
-  alias    = "default"
-  account  = var.SNOWFLAKE_ACCOUNT
-  username = var.SNOWFLAKE_USERNAME
-  password = var.SNOWFLAKE_PASSWORD
-  role     = var.SNOWFLAKE_ROLE
-}
+provider "snowflake" {}
 
 module "warehouse" {
   source           = "./warehouse"
