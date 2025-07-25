@@ -1,8 +1,3 @@
-variable "SNOWFLAKE_ACCOUNT" {}
-variable "SNOWFLAKE_USERNAME" {}
-variable "SNOWFLAKE_PASSWORD" {}
-variable "SNOWFLAKE_ROLE" {}
-
 # Warehouses
 variable "new_warehouses" {
   description = "Map of warehouse names and comments"
