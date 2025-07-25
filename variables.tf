@@ -1,33 +1,32 @@
-# Snowflake Connection Variables
-variable "SNOWFLAKE_ACCOUNT_NAME" {
-  description = "Snowflake account name"
-  type        = string
-}
-
-#variable "SNOWFLAKE_ORGANIZATION_NAME" {
-#  description = "Snowflake organization name"
-#  type        = string
-#}
-
-variable "SNOWFLAKE_ROLE" {
-  description = "Snowflake role for Terraform operations"
-  type        = string
-}
-
-variable "SNOWFLAKE_USER" {
-  description = "Snowflake user for Terraform operations"
-  type        = string
-}
-
-variable "SNOWFLAKE_PASSWORD" {
-  description = "Snowflake password for Terraform operations"
-  type        = string
-  sensitive   = true
-}
-
+# Warehouses
 variable "new_warehouses" {
-  description = "Map of new warehouses to be created by Terraform"
+  description = "Map of warehouse names and comments"
   type        = map(string)
 }
 
+# Warehouse ownership mapping
+variable "warehouse_owners" {
+  description = "Map of warehouse names to their owner roles"
+  type        = map(string)
+}
 
+variable "usernames" {
+  description = "Set of usernames"
+  type        = set(string)
+}
+
+variable "user_passwords" {
+  description = "Map of usernames to passwords"
+  type        = map(string)
+  sensitive   = true
+}
+
+variable "role_owners" {
+  description = "Map of roles and their new owner roles"
+  type        = map(string)
+}
+# Roles
+variable "role_list" {
+  description = "List of Snowflake roles to be created"
+  type        = list(string)
+}
